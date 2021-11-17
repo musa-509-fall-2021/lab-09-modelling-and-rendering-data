@@ -51,12 +51,6 @@
   <div id="densitymap"></div>
 
   <div id="densitylist">
-    <p>The 5 most densely populated block groups during {{ listdata[0].year }} are:</p>
-    <ul>
-      {%- for bg in listdata -%}
-        <li>{{ bg.geo_id }} with a density of {{ bg.pop_density | round(4) }} people per sq. meter</li>
-      {%- endfor -%}
-    </ul>
   </div>
 
   <div id="sexchart"></div>
@@ -116,7 +110,7 @@
       return `${density.toFixed(4)} per sq.m.`;
     }
 
-    var densitymapdata = {{ mapdata }};
+    var densitymapdata = null;
     var dataLayer = L.geoJSON(densitymapdata, {
       style: getStyle
     });
@@ -129,9 +123,9 @@
 
     */
     var sexchartdata = [
-        ['Year', ...{{ chartdata['year'] }}],
-        ['Male', ...{{ chartdata['total_male_pop'] }}],
-        ['Female', ...{{ chartdata['total_female_pop'] }}]
+        [ 'Year', ...[] ],
+        [ 'Male', ...[] ],
+        [ 'Female', ...[] ],
     ];
     var sexchart = c3.generate({
         bindto: '#sexchart',
@@ -156,14 +150,14 @@
 
     */
     var racechartdata = [
-        ['Year', ...{{ chartdata['year'] }}],
-        ['White', ...{{ chartdata['total_white_pop'] }}],
-        ['Black', ...{{ chartdata['total_black_pop'] }}],
-        ['Asian', ...{{ chartdata['total_asian_pop'] }}],
-        ['Hispanic', ...{{ chartdata['total_hispanic_pop'] }}],
-        ['Amerindian', ...{{ chartdata['total_amerindian_pop'] }}],
-        ['Other Race', ...{{ chartdata['total_other_race_pop'] }}],
-        ['Two or More Races', ...{{ chartdata['total_two_or_more_races_pop'] }}],
+        [ 'Year', ...[] ],
+        [ 'White', ...[] ],
+        [ 'Black', ...[] ],
+        [ 'Asian', ...[] ],
+        [ 'Hispanic', ...[] ],
+        [ 'Amerindian', ...[] ],
+        [ 'Other Race', ...[] ],
+        [ 'Two or More Races', ...[] ],
     ];
     var racechart = c3.generate({
         bindto: '#racechart',

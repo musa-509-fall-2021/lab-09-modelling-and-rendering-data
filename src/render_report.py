@@ -14,25 +14,20 @@ template_root = Path(__file__).parent / 'templates'
 output_root = Path(__file__).parent.parent / 'output'
 
 def main():
-    # Download the map data, and convert geometry to column to actual geometry
-    # objects.
-    mapdata_df = pd.read_gbq('SELECT * FROM lab09.blockgroups_mapdata')
-    mapdata_df.blockgroup_geom = gpd.GeoSeries.from_wkt(mapdata_df.blockgroup_geom)
-    mapdata_gdf = gpd.GeoDataFrame(mapdata_df, geometry='blockgroup_geom')
+    # Download the map data.
+    ...
 
     # Download the chart data.
-    chartdata_df = pd.read_gbq('SELECT * from lab09.blockgroups_chartdata')
+    ...
 
     # Download the population density list data.
-    listdata_df = pd.read_gbq('SELECT * from lab09.blockgroups_listdata')
+    ...
 
     # Render the data into the template.
     env = Environment(loader=FileSystemLoader(template_root))
     template = env.get_template('index.html')
     output = template.render(
-        mapdata=mapdata_gdf.to_json(),
-        chartdata=chartdata_df.to_dict('list'),
-        listdata=listdata_df.to_dict('records'),
+        # TEMPLATE DATA GOES HERE...
     )
 
     # Save the rendered output to a file in the "output" folder.
