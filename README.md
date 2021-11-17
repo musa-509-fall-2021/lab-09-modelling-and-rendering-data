@@ -18,7 +18,7 @@ We will be using data from the US Census to implement the dashboard. Specificall
     * `amerindian_pop`
     * `other_race_pop`
     * `two_or_more_races_pop`
-* `bigquery-public-data.geo_census_blockgroups.blockgroups_42`
+* `bigquery-public-data.geo_census_blockgroups.blockgroups_42` (`42` is the FIPS code for Pennsylvania)
   * Specific useful fields:
     * `geo_id`
     * `blockgroup_geom`
