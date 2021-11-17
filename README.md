@@ -24,14 +24,6 @@ We will be using data from the US Census to implement the dashboard. Specificall
     * `blockgroup_geom`
     * `county_fips_code` (Philadelphia is county `101`)
 
-## Definitions
-
-* **Data Model**: Data modeling is a process used to define data requirements needed to support a business processes. A data model is a design that dictates how pieces of data relate to one another to support those processes.
-
-  Often in a data model you will have a table for each significant noun within your domain. It is increasingly common for each one of these tables themselves to be called a **model** (I think largely due to the influence of [DBT](https://docs.getdbt.com/docs/building-a-dbt-project/building-models)).
-
-* **Upstream/Downstream**: If one model (_B_) depends on another model (_A_) having been created, then we say that _B_ is downstream of _A_, or _A_ is upstream of _B_.
-
 ## Process
 
 0.  _(optional)_ Fork this repository to your account, if you want to keep your work.
@@ -212,6 +204,14 @@ We will be using data from the US Census to implement the dashboard. Specificall
     ```
 
 1.  Run the _render_report.py_ script again (in the same way as in step #4) and ensure that you have data in your list.
+
+## Definitions
+
+* **Data Model**: Data modeling is a process used to define data requirements needed to support a business processes. A data model is a design that dictates how pieces of data relate to one another to support those processes.
+
+  Often in a data model you will have a table for each significant noun within your domain. It is increasingly common for each one of these tables themselves to be called a **model** (I think largely due to the influence of [DBT](https://docs.getdbt.com/docs/building-a-dbt-project/building-models)).
+
+* **Upstream/Downstream**: If one model (_B_) depends on another model (_A_) having been created, then we say that _B_ is downstream of _A_, or _A_ is upstream of _B_.
 
 ## Troubleshooting
 * If you see an error like:
