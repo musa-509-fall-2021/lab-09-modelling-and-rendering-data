@@ -164,7 +164,7 @@ We will be using data from the US Census to implement the dashboard. Specificall
 
 ### Add textual data into the report
 
-15.  Read and understand the following code:
+15. Read and understand the following code:
 
     ```py
     listdata_df = pd.read_gbq('SELECT * from lab09.blockgroups_listdata')
